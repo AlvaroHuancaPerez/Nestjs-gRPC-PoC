@@ -4,7 +4,10 @@ Template for gRPC with graphql
 - client-gql: Client side with graphql
 
 - grpc-* : Server side
-## Setup 
+## Setup
+```bash
+$ npm install
+```
 ```bash
 $ npm run start
 ```
