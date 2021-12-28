@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package invoice;
+
+service InvoiceService {
+  rpc FindOne (InvoiceById) returns (Invoice) {}
+}
+message InvoiceById {
+  int32 id = 1;
+}
+message Invoice {
+  int32 id = 1;
+  string clientId =2;
+  repeated InvoiceLine lines=3 ;
+}
+
+message InvoiceLine{
+    string productId =1;
+    int32 quantity = 2;
+}

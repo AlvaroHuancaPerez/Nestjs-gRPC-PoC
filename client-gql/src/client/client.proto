@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package client;
+
+service ClientService {
+  rpc FindOne(ClientById) returns (Client) {}
+}
+
+message ClientById {
+  int32 id = 1;
+}
+
+message Client {
+  int32 id = 1;
+  string name = 2;
+}
