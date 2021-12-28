@@ -8,9 +8,7 @@ export class InvoiceService {
 
 
   @GrpcMethod('ClientService', 'FindOne')
-  findOneClient(data: any
-  // , metadata: Metadata, call: ServerUnaryCall<any>
-  ) {
+  findOneClient(data: any) {
   const serverMetadata = new Metadata();
   const items = [
     { id: 1, name: 'net' },
@@ -21,9 +19,7 @@ export class InvoiceService {
   }
 
   @GrpcMethod('InvoiceService', 'FindOne')
-  findOne(data: any
-    // , metadata: Metadata, call: ServerUnaryCall<any>
-  ) {
+  findOne(data: any  ) {
     const serverMetadata = new Metadata();
     const items = [
       {
@@ -52,22 +48,8 @@ export class InvoiceService {
       }
     ];
 
-    // serverMetadata.add('Set-Cookie', 'yummy_cookie=choco');
-    // call.sendMetadata(serverMetadata);
-
-    // return {
-    //   id: 34,
-    //   clientId: 1,
-    //   lines: [{
-    //     productId: 1,
-    //     quantity: 4
-    //   }]
-    // }
-
     
     const invoice = items.find(({ id }) => id === data.id);
-    // const client=this.findOneClient(invoice.clientId);
-    // Logger.log(client);
 
     return invoice;
   }
